@@ -1,71 +1,48 @@
 "주의: Source Explorer의 충돌을 피하기 위해서 SrcExpl_pluginList를 새로 작성
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"====================================================
+"= Bundle
+"====================================================
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 
-" User Defined 
-Plugin 'snipMate'
-Plugin 'FuzzyFinder'
-Plugin 'The-NERD-tree'
-Plugin 'taglist.vim'
-Plugin 'bufexplorer.zip'
-Plugin 'DirDiff.vim'
-Plugin 'git://github.com/wesleyche/SrcExpl.git'
-Plugin 'SuperTab'
-Plugin 'SuperTab-continued.'
-Plugin 'cscope_macros.vim'
-Plugin 'gtags.vim'
-Plugin 'OmniCppComplete'
-Plugin 'armasm'
-Plugin 'https://github.com/dhruvasagar/vim-table-mode.git'
+Bundle 'snipMate'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'The-NERD-tree'
+Bundle 'taglist.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'DirDiff.vim'
+Bundle 'git://github.com/wesleyche/SrcExpl.git'
+Bundle 'SuperTab'
+Bundle 'SuperTab-continued.'
+Bundle 'cscope_macros.vim'
+Bundle 'gtags.vim'
+Bundle 'OmniCppComplete'
+Bundle 'armasm'
+Bundle 'https://github.com/dhruvasagar/vim-table-mode.git'
 "주석달기: \cc, \cn, \cs
 "다른모양 주석 설정: \ca
 "주석해제: \<space>
-Plugin 'The-NERD-Commenter'
-Plugin 'AutoComplPop'
+Bundle 'The-NERD-Commenter'
+Bundle 'AutoComplPop'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-"====================================================
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"====================================================
+filetype plugin indent on     " required!
 
 "====================================================
 "= 어셈블리 파일을 C처럼 인식하여 주석을 달기 위한 트릭
