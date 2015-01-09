@@ -6,11 +6,12 @@ vim 플러그인을 쉽게 설치하기 위한 프로젝트.
 
 - Bundle
 - Bash script
+- 2015-01-09, Bundle이 Vundle로 변경되었으며, 업데이트 내용을 적용했습니다.
 
 
 #설치하기
 
-    git clone https://github.com/ygpark/vimconfig.git ~/vimconfig
+    git clone https://github.com/blomdhal/vimconfig.git ~/vimconfig
     ~/vimconfig/install.sh
 
 
