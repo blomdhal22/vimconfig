@@ -105,6 +105,16 @@ if has("autocmd")
 endif
 
 "====================================================
+" Source_Explorer key map
+"====================================================
+nmap <C-I> <C-W>j:call g:SrcExpl_Jump()<CR>
+"nmap <C-O> :call g:SrcExpl_GoBack()<CR>
+
+"nmap <C-U> <C-W>j:call g:SrcExpl_NextDef()<CR>
+"nmap <C-Y> <C-W>j:call g:SrcExpl_PrevDef()<CR>
+
+
+"====================================================
 "= gtags.vim 설정
 "====================================================
 nmap <C-F2> :copen<CR>
@@ -192,7 +202,7 @@ func! Man()
 	let sm = expand("<cword>")
 	exe "!man -S 2:3:4:5:6:7:8:9:tcl:n:l:p:o ".sm
 endfunc
-nmap ,ma :call Man()<cr><cr>
+nmap ,man :call Man()<cr><cr>
 
 "====================================================
 "= Source Explorer config
