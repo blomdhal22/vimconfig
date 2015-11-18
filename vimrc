@@ -37,7 +37,7 @@ Plugin 'bufexplorer.zip'
 Plugin 'DirDiff.vim'
 Plugin 'git://github.com/wesleyche/SrcExpl.git'
 Plugin 'SuperTab'
-Plugin 'SuperTab-continued.'
+"Plugin 'SuperTab-continued.'
 Plugin 'cscope_macros.vim'
 Plugin 'gtags.vim'
 Plugin 'OmniCppComplete'
@@ -88,7 +88,7 @@ set incsearch
 set printoptions=portrait:n,wrap:n,duplex:off
 set fileencodings=utf-8,euc-kr
 set gfn=나눔고딕코딩\ 12	" gvim용 폰트 설정
-colorscheme dessert
+colorscheme desert
 
 "==========================
 "= autocmd
