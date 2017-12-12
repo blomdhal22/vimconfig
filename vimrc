@@ -1,4 +1,6 @@
 "주의: Source Explorer의 충돌을 피하기 위해서 SrcExpl_pluginList를 새로 작성
+".vimrc 명령이 적용되지 않는다면
+":so ~/.vimrc 명령 수행
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -70,25 +72,29 @@ filetype plugin indent on    " required
 "====================================================
 "= 어셈블리 파일을 C처럼 인식하여 주석을 달기 위한 트릭
 "====================================================
-au BufRead,BufNewFile *.S		set ft=c
+au BufRead,BufNewFile *.S       set ft=c
 
 "====================================================
 "= 기본 설정
 "====================================================
-set cindent			"들여쓰기 설정
-set ruler			" 화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여준다.
-set number			" 줄번호 출력
+set cindent         "들여쓰기 설정
+set ruler           " 화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여준다.
+set number          " 줄번호 출력
 set modifiable
-set hlsearch			" Highlight Search
-set ts=4			" tab stop - tab 크기
-set sw=4			" shift width - shift 크기 조절
-set sts=4			" soft tab stop - tab 이동 크기
+set hlsearch        " Highlight Search
+set ts=4            " tab stop - tab 크기
+set sw=4            " shift width - shift 크기 조절
+set sts=4           " soft tab stop - tab 이동 크기
+set softtabstop=4   " TAB키를 눌렀을때 몇 칸을 이동
+set tabstop=4       " 하나의 TAB을 몇 칸으로 인식
+set shiftwidth=4    " <<, >>을 눌렀을 때 몇 칸을 이동?
 set expandtab
 set incsearch
 set printoptions=portrait:n,wrap:n,duplex:off
 set fileencodings=utf-8,euc-kr
-set gfn=나눔고딕코딩\ 12	" gvim용 폰트 설정
+set gfn=나눔고딕코딩\ 12    " gvim용 폰트 설정
 colorscheme desert
+
 
 "==========================
 "= autocmd
@@ -154,20 +160,20 @@ nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l 
 
 "===== 버퍼간 이동
-map ,x :bn!<CR>	  " Switch to Next File Buffer
-map ,z :bp!<CR>	  " Switch to Previous File Buffer
-map ,w :bw<CR>	  " Close Current File Buffer
+map ,x :bn!<CR>   " Switch to Next File Buffer
+map ,z :bp!<CR>   " Switch to Previous File Buffer
+map ,w :bw<CR>    " Close Current File Buffer
 
-map ,1 :b!1<CR>	  " Switch to File Buffer #1
-map ,2 :b!2<CR>	  " Switch to File Buffer #2
-map ,3 :b!3<CR>	  " Switch to File Buffer #3
-map ,4 :b!4<CR>	  " Switch to File Buffer #4
-map ,5 :b!5<CR>	  " Switch to File Buffer #5
-map ,6 :b!6<CR>	  " Switch to File Buffer #6
-map ,7 :b!7<CR>	  " Switch to File Buffer #7
-map ,8 :b!8<CR>	  " Switch to File Buffer #8
-map ,9 :b!9<CR>	  " Switch to File Buffer #9
-map ,0 :b!0<CR>	  " Switch to File Buffer #0
+map ,1 :b!1<CR>   " Switch to File Buffer #1
+map ,2 :b!2<CR>   " Switch to File Buffer #2
+map ,3 :b!3<CR>   " Switch to File Buffer #3
+map ,4 :b!4<CR>   " Switch to File Buffer #4
+map ,5 :b!5<CR>   " Switch to File Buffer #5
+map ,6 :b!6<CR>   " Switch to File Buffer #6
+map ,7 :b!7<CR>   " Switch to File Buffer #7
+map ,8 :b!8<CR>   " Switch to File Buffer #8
+map ,9 :b!9<CR>   " Switch to File Buffer #9
+map ,0 :b!0<CR>   " Switch to File Buffer #0
 
 "===== gtags.vim
 nmap <C-n> :cn<CR>
@@ -179,8 +185,8 @@ nmap <C-\><C-]> :GtagsCursor<CR>
 "===== make
 let startdir = getcwd()
 func! Make()
-	exe "!cd ".startdir
-	exe "make"
+    exe "!cd ".startdir
+    exe "make"
 endfunc
 nmap ,mk :call Make()<cr><cr>
 
@@ -199,8 +205,8 @@ nmap ,h :call Hv()<cr>
 
 "===== man
 func! Man()
-	let sm = expand("<cword>")
-	exe "!man -S 2:3:4:5:6:7:8:9:tcl:n:l:p:o ".sm
+    let sm = expand("<cword>")
+    exe "!man -S 2:3:4:5:6:7:8:9:tcl:n:l:p:o ".sm
 endfunc
 nmap ,man :call Man()<cr><cr>
 
@@ -221,11 +227,11 @@ let g:SrcExpl_gobackKey = "<SPACE>"
 " // except itself are using buffers. And you need add their buffer names into
 " // below listaccording to the command ":buffers!"
 let g:SrcExpl_pluginList = [
-				\ "__Tag_List__",
-				\ "NERD_tree_1",
-				\ "Source_Explorer",
-				\ "[BufExplorer]"
-				\ ]
+                \ "__Tag_List__",
+                \ "NERD_tree_1",
+                \ "Source_Explorer",
+                \ "[BufExplorer]"
+                \ ]
 
 " // Enable/Disable the local definition searching, and note that this is not
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now.
@@ -262,7 +268,7 @@ let Tlist_Use_Right_Window=1
 "= Project config
 "====================================================
 if filereadable(".project.vimrc")
-	source .project.vimrc
+    source .project.vimrc
 endif
 
 "====================================================
