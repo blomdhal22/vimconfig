@@ -95,7 +95,7 @@ set fileencodings=utf-8,euc-kr
 set gfn=나눔고딕코딩\ 12    " gvim용 폰트 설정
 colorscheme desert
 
-set list                                " 공백.문자.표시$
+"set list                                " 공백.문자.표시$
 "set listchars=tab:>-,space:             " 공백.문자.결정$
 
 "==========================
