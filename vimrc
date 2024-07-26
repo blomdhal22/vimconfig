@@ -300,6 +300,19 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
  
+function! LoadGtags()
+  exe "silent cs reset"
+  let gtags_db = findfile("GTAGS", ".;")
+  if !empty(gtags_db)
+    let gtags_path = strpart(gtags_db, 0, match(gtags_db, "/GTAGS$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . gtags_db . " " . gtags_path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadGtags()
+set csprg=gtags-cscope
+
 "현재 디렉토리부터 root 디렉토리까지 tags를 찾는다.
 set tags=tags;/
 
