@@ -127,8 +127,10 @@ nmap <C-I> <C-W>j:call g:SrcExpl_Jump()<CR>
 "====================================================
 "= gtags.vim 설정
 "====================================================
-nmap <C-F2> :copen<CR>
-nmap <C-F4> :cclose<CR>
+"nmap <C-F2> :copen<CR>
+"nmap <C-F4> :cclose<CR>
+nnoremap <silent> <esc>[1;5Q :copen<CR>
+nnoremap <silent> <esc>[1;5S :cclose<CR>
 nmap <C-F5> :Gtags<SPACE>
 nmap <C-F6> :Gtags -f %<CR>
 nmap <C-F7> :GtagsCursor<CR>
