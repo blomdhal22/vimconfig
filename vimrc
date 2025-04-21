@@ -21,7 +21,8 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'wincent/command-t'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -37,7 +38,7 @@ Plugin 'The-NERD-tree'
 Plugin 'taglist.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'DirDiff.vim'
-Plugin 'git://github.com/wesleyche/SrcExpl.git'
+" Plugin 'git://github.com/wesleyche/SrcExpl.git'
 Plugin 'SrcExpl'
 Plugin 'SuperTab'
 "Plugin 'SuperTab-continued.'
@@ -97,7 +98,7 @@ set encoding=utf-8
 set gfn=나눔고딕코딩\ 12    " gvim용 폰트 설정
 colorscheme desert
 
-set list                                " 공백.문자.표시$
+" set list                                " 공백.문자.표시$
 set listchars=space:.,tab:>-            " 공백.문자.결정$
 
 "==========================
